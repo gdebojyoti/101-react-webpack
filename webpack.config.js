@@ -10,6 +10,13 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name]-[contenthash:8].js'
   },
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, 'dist')
+    },
+    port: 3000,
+    open: true
+  },
   module: {
     rules: [
       {
