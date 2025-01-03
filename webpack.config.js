@@ -1,4 +1,5 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'development',
@@ -26,5 +27,12 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'ReLearning ReactJS - with Webpack 5',
+      filename: path.resolve(__dirname, 'dist/index.html'),
+      template: path.resolve(__dirname, 'src/template.html')
+    })
+  ]
 }
