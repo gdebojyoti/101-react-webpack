@@ -1,14 +1,15 @@
-import React, { createElement } from 'react'
+import React from 'react'
 import { createRoot } from 'react-dom/client'
+
+import Header from './components/Header'
 
 const rootElm = document.getElementById('app')
 const root = createRoot(rootElm)
 
-const h1 = createElement('h1', {}, 'I got in.')
 const App = () => {
   return (
     <div>
-      {h1}
+      <Header />
     </div>
   )
 }
