@@ -18,6 +18,35 @@ module.exports = {
     port: 3000,
     open: true
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      // maxSize: 1024*500,
+      cacheGroups: {
+        react: {
+          test: /[\\/]node_modules[\\/]react[\\/]/,
+          name: 'vendor-react',
+          chunks: 'all'
+        },
+        reactDom: {
+          test: /[\\/]node_modules[\\/]react-dom[\\/]/,
+          name: 'vendor-react-dom',
+          chunks: 'all'
+        },
+        redux: {
+          test: /[\\/]node_modules[\\/]redux[\\/]/,
+          name: 'vendor-redux',
+          chunks: 'all'
+        },
+        otherVendors: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor-all',
+          chunks: 'all',
+          priority: -10
+        }
+      }
+    }
+  },
   module: {
     rules: [
       {
