@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack serve",
     "start": "nodemon src/server/index.js",
-    "build": "webpack",
+    "client:build": "webpack",
     "server:build": "webpack --config config/webpack.config.server.js"
   },
   "keywords": [],
