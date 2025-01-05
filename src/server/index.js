@@ -1,4 +1,5 @@
 const express = require('express')
+const { renderToString } = require('react-dom/server')
 
 const ServerApp = require('../../dist-server/main.js').default
 
@@ -13,7 +14,7 @@ app.get('/', function (req, res) {
         <title>React SSR</title>
       </head>
       <body>
-        <div id="app">${appHtml}</div>
+        <div id="app">${renderToString(appHtml)}</div>
       </body>
     </html>
   `)

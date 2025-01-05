@@ -1,5 +1,4 @@
 import React from 'react'
-import { renderToString } from 'react-dom/server'
 
 import Header from '../components/Header'
 
@@ -12,6 +11,4 @@ const App = () => {
   )
 }
 
-const ServerApp = () => renderToString(<App />)
-
-export default ServerApp
+export default App
