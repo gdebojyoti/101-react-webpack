@@ -1,4 +1,5 @@
 const path = require('path')
+const nodeExternals = require('webpack-node-externals');
 
 const SOURCE_DIR = path.resolve(__dirname, '../src')
 const TARGET_DIR = path.resolve(__dirname, '../dist-server')
@@ -18,6 +19,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx']
   },
+  externals: [nodeExternals()], // Exclude all Node modules, including react/react-dom
   module: {
     rules: [
       {
