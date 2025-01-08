@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack serve",
-    "start": "nodemon src/server/index.js",
-    "client:build": "webpack",
-    "server:build": "webpack --config config/webpack.config.server.js"
+    "dev": "nodemon src/server/index.js",
+    "build:dev:client": "webpack --config config/webpack.config.client.js --watch",
+    "build:dev:server": "webpack --config config/webpack.config.server.js --watch"
   },
   "keywords": [],
   "author": "",
