@@ -1,21 +1,24 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+const SOURCE_DIR = path.resolve(__dirname, '../src')
+const TARGET_DIR = path.resolve(__dirname, '../dist')
+
 module.exports = {
   mode: 'development',
   entry: {
-    main: path.resolve(__dirname, 'src/app.js')
+    main: path.resolve(SOURCE_DIR, 'app.js')
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: TARGET_DIR,
     filename: '[name]-[contenthash:8].js',
     clean: true
   },
   devServer: {
     static: {
-      directory: path.resolve(__dirname, 'dist')
+      directory: TARGET_DIR
     },
-    port: 3000,
+    port: 3001,
     open: true
   },
   optimization: {
@@ -68,8 +71,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'ReLearning ReactJS - with Webpack 5',
-      filename: path.resolve(__dirname, 'dist/index.html'),
-      template: path.resolve(__dirname, 'src/template.html')
+      filename: path.resolve(TARGET_DIR, 'index.html'),
+      template: path.resolve(SOURCE_DIR, 'template.html')
     })
   ]
 }

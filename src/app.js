@@ -1,10 +1,7 @@
 import React from 'react'
-import { createRoot } from 'react-dom/client'
+import { hydrateRoot } from 'react-dom/client'
 
 import Header from './components/Header'
-
-const rootElm = document.getElementById('app')
-const root = createRoot(rootElm)
 
 const App = () => {
   return (
@@ -14,4 +11,5 @@ const App = () => {
   )
 }
 
-root.render(<App />)
+const rootElm = document.getElementById('app')
+hydrateRoot(rootElm, <App />)
