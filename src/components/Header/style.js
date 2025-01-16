@@ -6,6 +6,10 @@ export const headerStyle = css`
   color: gold;
 `
 
+export const h1Style = css`
+  background-color: brown;
+`
+
 export const RandomDiv = styled.div`
   font-weight: ${({ count }) => count ? 'bold' : 'normal'}
 `
