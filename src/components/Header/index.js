@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { css } from '@linaria/core'
 
-const header = css`
-  background: red;
-`
+import { headerStyle, RandomDiv } from './style'
 
 const Header = () => {
   const [counter, setCounter] = useState(0)
@@ -15,9 +12,9 @@ const Header = () => {
   }, [])
 
   return (
-    <header className={header}>
+    <header className={headerStyle}>
       <h1>I got in.</h1>
-      <div>I have {counter} items.</div>
+      <RandomDiv count={counter}>I have {counter} items.</RandomDiv>
     </header>
   )
 }
