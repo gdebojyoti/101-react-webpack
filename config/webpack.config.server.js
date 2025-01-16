@@ -1,10 +1,14 @@
 const path = require('path')
-const nodeExternals = require('webpack-node-externals');
+const nodeExternals = require('webpack-node-externals')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
+const commonConfig = require('./webpack.config.common')
 
 const SOURCE_DIR = path.resolve(__dirname, '../src')
 const TARGET_DIR = path.resolve(__dirname, '../dist-server')
 
 module.exports = {
+  ...commonConfig,
   target: 'node',
   mode: 'production',
   entry: {
@@ -20,22 +24,5 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
   externals: [nodeExternals()], // Exclude all Node modules, including react/react-dom
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              presets: [
-                '@babel/preset-react'
-              ]
-            }
-          }
-        ]
-      }
-    ]
-  }
+  plugins: [new MiniCssExtractPlugin()]
 }

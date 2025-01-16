@@ -1,10 +1,14 @@
 const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+const commonConfig = require('./webpack.config.common')
 
 const SOURCE_DIR = path.resolve(__dirname, '../src')
 const TARGET_DIR = path.resolve(__dirname, '../dist')
 
 module.exports = {
+  ...commonConfig,
   mode: 'development',
   entry: {
     main: path.resolve(SOURCE_DIR, 'app.js')
@@ -50,25 +54,8 @@ module.exports = {
       }
     }
   },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              presets: [
-                '@babel/preset-react'
-              ]
-            }
-          }
-        ]
-      }
-    ]
-  },
   plugins: [
+    new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       title: 'ReLearning ReactJS - with Webpack 5',
       filename: path.resolve(TARGET_DIR, 'index.html'),
