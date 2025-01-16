@@ -12,14 +12,20 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@linaria/core": "^6.2.0",
+    "@linaria/react": "^6.2.1",
     "express": "^4.21.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.26.3",
+    "@wyw-in-js/babel-preset": "^0.5.5",
+    "@wyw-in-js/webpack-loader": "^0.5.5",
     "babel-loader": "^9.2.1",
+    "css-loader": "^7.1.2",
     "html-webpack-plugin": "^5.6.3",
+    "mini-css-extract-plugin": "^2.9.2",
     "nodemon": "^3.1.9",
     "webpack": "^5.97.1",
     "webpack-cli": "^6.0.1",
