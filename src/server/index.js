@@ -7,8 +7,13 @@ const ServerApp = require('../../dist-server/main.js').default
 
 const app = express()
 
-app.get('/', function (req, res) {
-  const appHtml = ServerApp()
+// Serve static assets (e.g., JavaScript files) from the dist-client directory
+app.use(express.static(path.resolve(__dirname, '../../dist')))
+
+app.get('*', function (req, res) {
+  const appHtml = ServerApp({ location: req.url })
+
+  console.log("HI!")
 
   // Read the generated HTML template (with injected script tags) from the client build
   const htmlTemplate = fs.readFileSync(path.resolve(__dirname, '../../dist/index.html'), 'utf-8')
@@ -21,8 +26,5 @@ app.get('/', function (req, res) {
 
   res.send(finalHtml)
 })
-
-// Serve static assets (e.g., JavaScript files) from the dist-client directory
-app.use(express.static(path.resolve(__dirname, '../../dist')))
 
 app.listen(3000)
