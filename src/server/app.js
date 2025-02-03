@@ -1,12 +1,18 @@
 import React from 'react'
 
-import Header from 'shared/components/Header'
+import { StaticRouter, Route, Routes } from 'react-router'
 
-const App = () => {
+import HomePage from 'pages/Home'
+import AboutPage from 'pages/About'
+
+const App = ({ location }) => {
   return (
-    <div>
-      <Header />
-    </div>
+    <StaticRouter location={location}>
+      <Routes>
+        <Route path='/about' element={<AboutPage />} />
+        <Route path='/' element={<HomePage />} />
+      </Routes>
+    </StaticRouter >
   )
 }
 

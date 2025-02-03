@@ -7,6 +7,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
+      pages: path.resolve(SOURCE_DIR, 'pages'),
       shared: path.resolve(SOURCE_DIR, 'shared')
     }
   },

@@ -1,13 +1,19 @@
 import React from 'react'
 import { hydrateRoot } from 'react-dom/client'
 
-import Header from 'shared/components/Header'
+import { BrowserRouter, Route, Routes } from 'react-router'
+
+import HomePage from 'pages/Home'
+import AboutPage from 'pages/About'
 
 const App = () => {
   return (
-    <div>
-      <Header />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/about' element={<AboutPage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
