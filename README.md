@@ -2,6 +2,7 @@
 
 ##### Implemented
 - [x] **SSR** (server-side rendered) web application using **React 19**, **Webpack 5** and **Express**
+- [x] Support for multiple SSR routes / pages
 - [x] **Linaria** (CSS-in-JS library) for styles
 
 ##### Pending
