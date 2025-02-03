@@ -20,9 +20,6 @@ module.exports = {
     libraryTarget: 'commonjs',
     clean: true
   },
-  resolve: {
-    extensions: ['.js', '.jsx']
-  },
   externals: [nodeExternals()], // Exclude all Node modules, including react/react-dom
   plugins: [new MiniCssExtractPlugin()]
 }

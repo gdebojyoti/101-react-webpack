@@ -1,6 +1,15 @@
+const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
+const SOURCE_DIR = path.resolve(__dirname, '../src')
+
 module.exports = {
+  resolve: {
+    extensions: ['.js', '.jsx'],
+    alias: {
+      shared: path.resolve(SOURCE_DIR, 'shared')
+    }
+  },
   module: {
     rules: [
       {
