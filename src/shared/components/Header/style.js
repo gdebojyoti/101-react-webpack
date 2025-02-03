@@ -22,3 +22,13 @@ export const unusedStyle = css`
   color: red;
   text-decoration: dashed;
 `
+
+export const linkStyle = css`
+  margin-left: 10px;
+  color: white;
+  text-decoration: none;
+
+  &:first-of-type {
+    margin-left: 0;
+  }
+`
