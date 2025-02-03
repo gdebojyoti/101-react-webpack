@@ -5,8 +5,12 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/server/index.js",
+    
     "build:dev:client": "webpack --config config/webpack.config.client.js --watch",
-    "build:dev:server": "webpack --config config/webpack.config.server.js --watch"
+    "build:dev:server": "webpack --config config/webpack.config.server.js --watch",
+    
+    "build:prod:client": "webpack --config config/webpack.config.prod.client.js",
+    "build:prod:server": "webpack --config config/webpack.config.prod.server.js"
   },
   "keywords": [],
   "author": "",
