@@ -11,7 +11,7 @@ module.exports = {
   ...commonConfig,
   mode: 'development',
   entry: {
-    main: path.resolve(SOURCE_DIR, 'app.js')
+    main: path.resolve(SOURCE_DIR, 'client/app.js')
   },
   output: {
     path: TARGET_DIR,

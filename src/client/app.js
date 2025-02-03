@@ -1,7 +1,7 @@
 import React from 'react'
 import { hydrateRoot } from 'react-dom/client'
 
-import Header from './components/Header'
+import Header from '../components/Header'
 
 const App = () => {
   return (
