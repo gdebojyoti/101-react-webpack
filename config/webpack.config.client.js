@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const commonConfig = require('./webpack.config.common')
 
 const SOURCE_DIR = path.resolve(__dirname, '../src')
-const TARGET_DIR = path.resolve(__dirname, '../dist')
+const TARGET_DIR = path.resolve(__dirname, '../dist-client')
 
 module.exports = {
   ...commonConfig,
