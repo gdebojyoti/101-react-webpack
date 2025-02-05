@@ -10,7 +10,7 @@ const TARGET_DIR = path.resolve(__dirname, '../dist-server')
 module.exports = {
   ...commonConfig,
   target: 'node',
-  mode: 'production',
+  mode: 'development',
   entry: {
     main: path.resolve(SOURCE_DIR, 'server/app.js')
   },
