@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/server/index.js",
-    
+    "dev": "pm2 start src/server/index.js",
+
     "build:dev:client": "webpack --config config/webpack.config.client.js --watch",
     "build:dev:server": "webpack --config config/webpack.config.server.js --watch",
     
@@ -31,7 +31,7 @@
     "css-loader": "^7.1.2",
     "html-webpack-plugin": "^5.6.3",
     "mini-css-extract-plugin": "^2.9.2",
-    "nodemon": "^3.1.9",
+    "pm2": "^5.4.3",
     "webpack": "^5.97.1",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.0",
